@@ -27,6 +27,7 @@ alias serve='python -m SimpleHTTPServer 8000'
 alias untar='tar -zxvf'
 alias ping='ping -c 5 '
 alias aliases='nvim ~/.bash_aliases_private'
+alias dotfiles='cd ~/dotfiles'
 
 # web apps
 alias myip='curl -s http://ifconfig.co'
