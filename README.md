@@ -23,3 +23,9 @@ To install each config, run this from the dotfiles folder:
 ```
 $ stow $CONFIG
 ```
+
+## private aliases, functions, and credentials
+
+I've parted out `.bash_aliases` from `.bashrc` and for good reason: It would not be fun if you accidentally pushed private stuff to GitHub. Keep anything you *don't* want tracked inside .bash_aliases_private, please. I've added it to the gitignore.
+
+As yet, I have not figured this out for `.gitconfig`.
