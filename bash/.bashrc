@@ -103,7 +103,7 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[32m\]\u\[\e[m\]\[\e[32m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[33m\]\w\[\e[m\] \`parse_git_branch\`\\$ "
+export PS1="\A \[\e[32m\]\u\[\e[m\]\[\e[32m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[33m\]\w\[\e[m\] \`parse_git_branch\`\\$ "
 
 # Aliases - it's wiser to put these in a separate file.
 # One for public stuff that you don't mind putting into GitHub,
