@@ -103,7 +103,27 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\A \[\e[32m\]\u\[\e[m\]\[\e[32m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[33m\]\w\[\e[m\] \`parse_git_branch\`\\$ "
+PROMPT_COMMAND=__prompt_command
+
+__prompt_command() {
+    local EXIT="$?"
+
+	PS1=""
+
+	local RCol='\[\e[m\]'
+
+	local Red='\[\e[0;31m\]'
+	local Gre='\[\e[0;32m\]'
+	local Yel='\[\e[0;33m\]'
+
+	if [ $EXIT != 0 ]; then
+		PS1+="${Red}\A${RCol}"		# Add red if exit code non 0
+	else
+		PS1+="${Gre}\A${RCol}"
+	fi
+
+	PS1+=" ${Gre}\u@\h${RCol}:${Yel}\w ${RCol}\`parse_git_branch\`\\$ "
+}
 
 # Aliases - it's wiser to put these in a separate file.
 # One for public stuff that you don't mind putting into GitHub,
