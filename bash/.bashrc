@@ -119,7 +119,7 @@ __prompt_command() {
 	if [ $EXIT != 0 ]; then
 		PS1+="${Red}\A${RCol}"		# Add red if exit code non 0
 	else
-		PS1+="${Gre}\A${RCol}"
+		PS1+="\A${RCol}"
 	fi
 
 	PS1+=" ${Gre}\u@\h${RCol}:${Yel}\w ${RCol}\`parse_git_branch\`\\$ "
