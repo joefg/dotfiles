@@ -67,10 +67,10 @@ Plug 'lifepillar/pgsql.vim'
 " / /__/ /_/ / / /_/ / /_/ / /  (__  ) 
 " \___/\____/_/\____/\__,_/_/  /____/  
 "                                      
-Plug 'tomasr/molokai'
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
-colorscheme molokai
+colorscheme jellybeans
 
 "               __  __  _                 
 "    ________  / /_/ /_(_)___  ____ ______
@@ -150,6 +150,7 @@ nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 " lightline settings
 let g:lightline = {
+  \ 'colorscheme' : 'jellybeans',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
