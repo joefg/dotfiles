@@ -40,7 +40,6 @@ Plug 'airblade/vim-gitgutter'
 "
 " polyglot
 Plug 'sheerun/vim-polyglot'
-Plug 'scrooloose/syntastic'
 Plug 'Raimondi/delimitMate'
 
 " html
