@@ -2,4 +2,19 @@
 	lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [core]
-	editor = nvim
+    editor = nvim
+
+# include -- this is where you put your
+# private credentials, user name, etc.
+#
+# warning: if you use git config user.name "your name", it'll be added
+# to this file (~/.gitconfig), not your ~/.gitconfig.private,
+# be careful you don't commit your credentials!
+#
+# example:
+# [user]
+#   email = you@email.com
+#   name = you
+
+[include]
+    path = ~/.gitconfig.private
