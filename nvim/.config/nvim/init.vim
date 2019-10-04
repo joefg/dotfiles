@@ -256,6 +256,13 @@ augroup END
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 
+" markdown
+augroup vimrc-markdown
+  autocmd!
+  autocmd FileType markdown setlocal noexpandtab shiftwidth=4 tabstop=4 colorcolumn=79 nonumber
+augroup END
+
+
 " sql - we use postgresql, accept no substitutes
 let g:sql_type_default = 'pgsql'
 
