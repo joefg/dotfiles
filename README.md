@@ -42,4 +42,4 @@ $ stow $CONFIG
 
 I've parted out `.bash_aliases` from `.bashrc` and for good reason: It would not be fun if you accidentally pushed private stuff to GitHub. Keep anything you *don't* want tracked inside `.bash_aliases_private`, please. I've added it to the `.gitignore`.
 
-As yet, I have not figured this out for `.gitconfig`.
+I'm also now importing `~/.gitconfig.private` from your home directory. Put your user.name, user.email, and anything you don't want tracked in there. Like above, I'm adding that file to the gitignore.

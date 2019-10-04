@@ -1,1 +1,4 @@
-.bash_aliases_private
+# private aliases and credentials
+
+.bash_aliases_private # bash
+.gitconfig.private # git
