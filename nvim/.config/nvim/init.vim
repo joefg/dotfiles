@@ -61,6 +61,9 @@ Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 " sql (Postgres)
 Plug 'lifepillar/pgsql.vim'
 
+" python+sql
+Plug 'MathSquared/vim-python-sql'
+
 "               __                     
 "   _________  / /___  __  ____________
 "  / ___/ __ \/ / __ \/ / / / ___/ ___/
@@ -261,7 +264,6 @@ augroup vimrc-markdown
   autocmd!
   autocmd FileType markdown setlocal noexpandtab shiftwidth=4 tabstop=4 colorcolumn=79 nonumber
 augroup END
-
 
 " sql - we use postgresql, accept no substitutes
 let g:sql_type_default = 'pgsql'
