@@ -1,4 +1,6 @@
 # private aliases and credentials
-
 .bash_aliases_private # bash
 .gitconfig.private # git
+
+# generated files
+nvim/.config/
