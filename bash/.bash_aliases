@@ -1,7 +1,6 @@
 # programs
 alias tmux="TERM=screen-256color-bce tmux"
-alias rr='ranger'
-alias nv='nvim -O'
+alias vim='nvim'
 alias wget='wget -c'
 
 # some ls aliases
