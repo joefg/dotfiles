@@ -9,6 +9,7 @@ dotfiles
    +--- bash
    |     |
    |     +-- .bashrc
+   |     |
    |     +-- .bash_aliases
    |
    +--- git
