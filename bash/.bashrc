@@ -68,6 +68,10 @@ function parse_git_branch() {
 	fi
 }
 
+#
+# PS1 prompt section
+#
+
 # get current status of git repo
 function parse_git_dirty {
 	status=`git status 2>&1 | tee`
@@ -103,22 +107,13 @@ function parse_git_dirty {
 	fi
 }
 
-EXIT="$?"
+RCol='\[\e[m\]'    # reset colour
+Red='\[\e[0;31m\]' # red
+Gre='\[\e[0;32m\]' # green
+Yel='\[\e[0;33m\]' # yellow
 
 PS1=""
-
-RCol='\[\e[m\]'
-
-Red='\[\e[0;31m\]'
-Gre='\[\e[0;32m\]'
-Yel='\[\e[0;33m\]'
-
-if [ $EXIT != 0 ]; then
-    PS1+="${Red}\A${RCol}"		# Add red if exit code non 0
-else
-    PS1+="\A${RCol}"
-fi
-
+PS1+="\A${RCol}"
 PS1+=" ${Gre}\u@\h${RCol}:${Yel}\w ${RCol}\`parse_git_branch\`\\$ "
 
 # Aliases - it's wiser to put these in a separate file.
