@@ -21,7 +21,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " general plugins
 Plug 'junegunn/vim-easy-align'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
@@ -212,10 +211,6 @@ hi User1 ctermfg=007 ctermbg=239 guibg=#4e4e4e guifg=#adadad
 hi User2 ctermfg=007 ctermbg=236 guibg=#303030 guifg=#adadad
 hi User3 ctermfg=236 ctermbg=236 guibg=#303030 guifg=#303030
 hi User4 ctermfg=239 ctermbg=239 guibg=#4e4e4e guifg=#4e4e4
-
-" nerdtree settings
-nnoremap <silent> <F2> :NERDTreeFind<CR>
-nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 " rainbow_parentheses.vim settings
 let g:rbpt_colorpairs = [
