@@ -29,6 +29,11 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+" does markdown count as a language?
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
+
 "     __                                             
 "    / /___ _____  ____ ___  ______ _____ ____  _____
 "   / / __ `/ __ \/ __ `/ / / / __ `/ __ `/ _ \/ ___/
