@@ -113,8 +113,8 @@ Gre='\[\e[0;32m\]' # green
 Yel='\[\e[0;33m\]' # yellow
 
 PS1=""
-PS1+="\A${RCol}"
-PS1+=" ${Gre}\u@\h${RCol}:${Yel}\w ${RCol}\`parse_git_branch\`\\$ "
+PS1+="${RCol}"
+PS1+="${Gre}\u@\h${RCol}:${Yel}\w ${RCol}\`parse_git_branch\`\\$ "
 
 # Aliases - it's wiser to put these in a separate file.
 # One for public stuff that you don't mind putting into GitHub,
