@@ -4,29 +4,19 @@ mah configs
 
 ## what's in here?
 ```
+
 dotfiles
-   |
-   +--- bash
-   |     |
-   |     +-- .bashrc
-   |     |
-   |     +-- .bash_aliases
-   |
-   +--- git
-   |     |
-   |     +-- .gitconfig
-   |
-   +--- nvim
-   |     |
-   |     +-- .config
-   |            |
-   |            +-- nvim
-   |                 |
-   |                 +-- init.vim
-   |
-   +--- tmux
-   |     |
-   |     +-- .tmux.conf
+├── bash
+│   ├── .bash_aliases
+│   └── .bashrc
+│─ git
+│   └── .gitconfig
+├── nvim
+│   └── .config
+│       └── nvim
+│           ├── init.vim
+└── tmux
+    └── .tmux.conf
 ```
 
 ## how to use
