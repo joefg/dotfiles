@@ -239,8 +239,6 @@ let g:rbpt_colorpairs = [
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 
-let g:jedi#smart_auto_mappings = 0
-
 " rainbow-parentheses settings
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
