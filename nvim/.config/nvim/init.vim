@@ -131,10 +131,6 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
 
-" tabs that don't suck
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-
 " closing braces
 inoremap {<CR> {<CR>}<Esc>ko<tab>
 inoremap [<CR> [<CR>]<Esc>ko<tab>
