@@ -1,8 +1,3 @@
-# programs
-alias tmux="TERM=screen-256color-bce tmux"
-alias vim='nvim'
-alias wget='wget -c'
-
 # some ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -27,6 +22,7 @@ alias untar='tar -zxvf'
 alias ping='ping -c 5 '
 alias aliases='nvim ~/.bash_aliases_private'
 alias dotfiles='cd ~/dotfiles'
+alias wget='wget -c'
 
 # web apps
 alias myip='curl -s http://ifconfig.co'
