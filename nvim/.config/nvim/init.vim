@@ -26,13 +26,10 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
 
 " versioning - git, the only version control that matters ;)
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " does markdown count as a language?
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-
 
 "     __                                             
 "    / /___ _____  ____ ___  ______ _____ ____  _____
@@ -43,19 +40,13 @@ Plug 'plasticboy/vim-markdown'
 "
 " polyglot
 Plug 'sheerun/vim-polyglot'
-Plug 'Raimondi/delimitMate'
 
 " html
 Plug 'hail2u/vim-css3-syntax'
 Plug 'gorodinskiy/vim-coloresque'
-Plug 'tpope/vim-haml'
 
 " javascript
 Plug 'jelera/vim-javascript-syntax'
-
-" perl
-Plug 'vim-perl/vim-perl'
-Plug 'c9s/perlomni.vim'
 
 " python
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
@@ -244,11 +235,6 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
-" fugitive settings
-if exists("*fugitive#statusline")
-  set statusline+=%{fugitive#statusline()}
-endif
 
 " indentline
 let g:indentLine_enabled = 1
