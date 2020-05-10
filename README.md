@@ -1,44 +1,57 @@
-# joefg's dotfiles
+# dotfiles
 
-mah configs
-
-## what's in here?
+## Structure
 ```
-
 dotfiles
 ├── bash
-│   ├── .bash_aliases
-│   └── .bashrc
+│   ├── .bash_aliases
+│   └── .bashrc
 │─ git
-│   └── .gitconfig
+│   └── .gitconfig
 ├── nvim
-│   └── .config
-│       └── nvim
-│           └── init.vim
+│   └── .config
+│       └── nvim
+│           └── init.vim
 ├── ranger
-│   └── .config
-│       └── ranger
-│           ├── commands_full.py
-│           ├── commands.py
-│           ├── rc.conf
-│           ├── rifle.conf
-│           └── scope.sh
+│   └── .config
+│       └── ranger
+│           ├── commands_full.py
+│           ├── commands.py
+│           ├── rc.conf
+│           ├── rifle.conf
+│           └── scope.sh
 └── tmux
     └── .tmux.conf
 ```
 
-## how to use
+## Installation
 
 I'm using [GNU Stow](https://www.gnu.org/software/stow/) to manage symbolic links from this dotfiles repository to their locations in your home directory.
 
-To install each config, run this from the dotfiles folder:
+To install each config, run `stow $CONFIG` from this repository.
+
+## Private Aliases, Functions, and Credentials
+
+In the interests of avoiding the embarrassment of accidentally committing some private credentials or somesuch, these dotfiles have the ability to read aliases from non-tracked files.
+
+| Config | Private               |
+| ------ | --------------------- |
+| bash   | .bash_aliases_private |
+| git    | .gitconfig.private    |
+
+### Bash
+This is imported via `.bashrc`, the same way that `~/.bash_aliases` is imported.
 
 ```
-$ stow $CONFIG
+if [ -f ~/.bash_aliases_private ]; then
+    . ~/.bash_aliases_private
+fi
 ```
 
-## private aliases, functions, and credentials
+### Git
+This is imported via `.gitconfig`, through an `[include]` directive.
 
-I've parted out `.bash_aliases` from `.bashrc` and for good reason: It would not be fun if you accidentally pushed private stuff to GitHub. Keep anything you *don't* want tracked inside `.bash_aliases_private`, please. I've added it to the `.gitignore`.
-
-I'm also now importing `~/.gitconfig.private` from your home directory. Put your user.name, user.email, and anything you don't want tracked in there. Like above, I'm adding that file to the gitignore.
+```
+[include]
+    path = ~/.gitconfig.private
+```
