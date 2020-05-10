@@ -14,7 +14,15 @@ dotfiles
 ├── nvim
 │   └── .config
 │       └── nvim
-│           ├── init.vim
+│           └── init.vim
+├── ranger
+│   └── .config
+│       └── ranger
+│           ├── commands_full.py
+│           ├── commands.py
+│           ├── rc.conf
+│           ├── rifle.conf
+│           └── scope.sh
 └── tmux
     └── .tmux.conf
 ```
