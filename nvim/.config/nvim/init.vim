@@ -27,6 +27,7 @@ Plug 'Yggdroot/indentLine'
 
 " versioning - git, the only version control that matters ;)
 Plug 'airblade/vim-gitgutter'
+Plug 'jreybert/vimagit'
 
 " does markdown count as a language?
 Plug 'plasticboy/vim-markdown'
