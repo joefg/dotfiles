@@ -15,6 +15,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# shortcuts
+alias ..='cd ../'
+alias ~='cd ~'
+
 # quick 'uns
 alias reload='source ~/.bashrc'
 alias serve='python -m SimpleHTTPServer 8000'
