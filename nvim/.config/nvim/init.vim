@@ -23,7 +23,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'Yggdroot/indentLine'
 
 " versioning - git, the only version control that matters ;)
 Plug 'airblade/vim-gitgutter'
