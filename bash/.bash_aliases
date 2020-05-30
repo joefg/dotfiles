@@ -38,4 +38,4 @@ alias moon='curl wttr.in/Moon'
 
 # comedy
 alias party='curl -s parrot.live'
-alias shrug='echo ¯\_(ツ)_/¯'
+alias shrug='echo "¯\_(ツ)_/¯"'
