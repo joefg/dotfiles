@@ -28,9 +28,6 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
 
-" does markdown count as a language?
-Plug 'plasticboy/vim-markdown'
-
 "     __                                             
 "    / /___ _____  ____ ___  ______ _____ ____  _____
 "   / / __ `/ __ \/ __ `/ / / / __ `/ __ `/ _ \/ ___/
@@ -42,11 +39,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'sheerun/vim-polyglot'
 
 " html
-Plug 'hail2u/vim-css3-syntax'
 Plug 'gorodinskiy/vim-coloresque'
-
-" javascript
-Plug 'jelera/vim-javascript-syntax'
 
 " python
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
