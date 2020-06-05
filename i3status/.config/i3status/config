@@ -1,0 +1,59 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        interval = 5
+}
+
+#order += "ipv6"
+#order += "run_watch DHCP"
+#order += "run_watch VPNC"
+order += "wireless wlp3s0"
+order += "ethernet eth0"
+order += "volume master"
+order += "battery 0"
+order += "memory"
+order += "time"
+
+wireless wlp3s0 {
+        format_up = "(%quality at %essid, %bitrate)"
+        format_down = "W: down"
+}
+
+ethernet eth0 {
+        format_up = "E:(%speed)"
+        format_down = "E: down"
+}
+
+volume master {
+        format = "Vol: %volume"
+        format_muted = "Vol: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+battery 0 {
+        format = "%status %percentage r:%remaining ttd:%emptytime"
+        format_down = "No battery"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+}
+
+path_exists VPN {
+        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+        path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+time {
+        format = "%H:%M:%S"
+}
+
+memory {
+        format = "%used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
