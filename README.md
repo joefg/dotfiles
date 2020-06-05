@@ -6,12 +6,20 @@ dotfiles
 ├── bash
 │   ├── .bash_aliases
 │   └── .bashrc
-│─ git
+│── git
 │   └── .gitconfig
 ├── nvim
 │   └── .config
 │       └── nvim
 │           └── init.vim
+├── i3
+│   └── .config
+│       └── i3
+│           └── config
+├── i3status
+│   └── .config
+│       └── i3status
+│           └── config
 ├── ranger
 │   └── .config
 │       └── ranger
@@ -34,10 +42,10 @@ To install each config, run `stow $CONFIG` from this repository.
 
 In the interests of avoiding the embarrassment of accidentally committing some private credentials or somesuch, these dotfiles have the ability to read aliases from non-tracked files.
 
-| Config | Private               |
-| ------ | --------------------- |
-| bash   | .bash_aliases_private |
-| git    | .gitconfig.private    |
+| Config | Private                 |
+| ------ | ----------------------- |
+| bash   | `.bash_aliases_private` |
+| git    | `.gitconfig.private`    |
 
 ### Bash
 This is imported via `.bashrc`, the same way that `~/.bash_aliases` is imported.
