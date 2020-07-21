@@ -1,60 +1,69 @@
 general {
         output_format = "i3bar"
-        colors = true
+        colors = false
+        markup = pango
         interval = 5
+        color_good = '#2f343f'
+		color_degraded = '#ebcb8b'
+		color_bad = '#ba5e57'
 }
 
-#order += "ipv6"
-#order += "run_watch DHCP"
-#order += "run_watch VPNC"
+order += "cpu_temperature 0"
+order += "ethernet enp1s0"
 order += "wireless wlp3s0"
-order += "ethernet eth0"
 order += "volume master"
 order += "battery 0"
-order += "memory"
-order += "time"
+order += "tztime local"
 
-wireless wlp3s0 {
-        format_up = "(%quality at %essid, %bitrate)"
-        format_down = "W: down"
+load {
+        format = "<span background='#f59335'> L:%5min Load </span>"
 }
 
-ethernet eth0 {
-        format_up = "E:(%speed)"
-        format_down = "E: down"
+cpu_temperature 0 {
+        format = "<span background='#bf616a'> T:%degrees °C </span>"
+        path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
+disk "/" {
+        format = "<span background='#fec7cd'> %free Free </span>"
+}
+
+disk "/home" {
+        format = "<span background='#a1d569'> %free Free </span>"
+}
+
+ethernet enp1s0 {
+        format_up = "<span background='#88c0d0'> %ip </span>"
+        format_down = "<span background='#88c0d0'> Disconnected </span>"
+}
+
+wireless wlp3s0 {
+        format_up = "<span background='#b48ead'> %essid </span>"
+        format_down = "<span background='#b48ead'> Disconnected </span>"
 }
 
 volume master {
-        format = "VOL: %volume"
-        format_muted = "VOL: muted (%volume)"
+        format = "<span background='#ebcb8b'> V:%volume </span>"
+        format_muted = "<span background='#ebcb8b'> V:Muted </span>"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
 }
 
 battery 0 {
-        format = "%status %percentage REM:%remaining EMP:%emptytime"
-        format_down = "No battery"
-        last_full_capacity = true
+	last_full_capacity = true
+        format = "<span background='#a3be8c'> %status %percentage </span>"
+        format_down = "No Battery"
+        status_chr = "Charging"
+        status_bat = "Battery"
+        status_unk = "Unknown"
+        status_full = "Charged"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
 }
 
-run_watch DHCP {
-        pidfile = "/var/run/dhclient*.pid"
+tztime local {
+		format = "<span background='#81a1c1'> %time </span>"
+		format_time = "%a %-d %b %H:%M"
 }
 
-path_exists VPN {
-        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
-        path = "/proc/sys/net/ipv4/conf/tun0"
-}
-
-time {
-        format = "%H:%M"
-}
-
-memory {
-        format = "RAM: %used"
-        threshold_degraded = "10%"
-        format_degraded = "FREE: %free"
-}
