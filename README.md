@@ -28,6 +28,9 @@ dotfiles
 │           ├── rc.conf
 │           ├── rifle.conf
 │           └── scope.sh
+├── newsboat
+│   └── .newsboat
+│       └── config
 └── tmux
     └── .tmux.conf
 ```
