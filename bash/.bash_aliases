@@ -36,6 +36,11 @@ alias ncity='curl -s ifconfig.co/city'
 alias coinz='curl -s cmc.rjldev.com'
 alias moon='curl wttr.in/Moon'
 
+# dump colours into terminal-- for development?
+function dumpcolours(){
+    for i in {0..255}; do printf "\x1b[38;5;${i}mcolour${i}\x1b[0m\n"; done
+}
+
 # comedy
 alias party='curl -s parrot.live'
 alias shrug='echo "¯\_(ツ)_/¯"'
