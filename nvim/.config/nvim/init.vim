@@ -35,17 +35,11 @@ Plug 'jreybert/vimagit'
 " /_/\__,_/_/ /_/\__, /\__,_/\__,_/\__, /\___/____/  
 "               /____/            /____/             
 "
-" polyglot
+" polyglot (all the useful languages, loaded)
 Plug 'sheerun/vim-polyglot'
 
 " html
 Plug 'gorodinskiy/vim-coloresque'
-
-" python
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-
-" sql (Postgres)
-Plug 'lifepillar/pgsql.vim'
 
 " python+sql
 Plug 'MathSquared/vim-python-sql'
