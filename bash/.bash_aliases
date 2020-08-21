@@ -18,6 +18,7 @@ fi
 # shortcuts
 alias ..='cd ../'
 alias ~='cd ~'
+alias cls='clear'
 
 # quick 'uns
 alias reload='source ~/.bashrc'
