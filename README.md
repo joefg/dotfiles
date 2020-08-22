@@ -12,6 +12,8 @@ dotfiles
 │   └── .config
 │       └── nvim
 │           └── init.vim
+├── vim
+│   └── .vimrc
 ├── i3
 │   └── .config
 │       └── i3
