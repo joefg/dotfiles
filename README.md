@@ -22,14 +22,6 @@ dotfiles
 │   └── .config
 │       └── i3status
 │           └── config
-├── ranger
-│   └── .config
-│       └── ranger
-│           ├── commands_full.py
-│           ├── commands.py
-│           ├── rc.conf
-│           ├── rifle.conf
-│           └── scope.sh
 ├── newsboat
 │   └── .newsboat
 │       └── config
