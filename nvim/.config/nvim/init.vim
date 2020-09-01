@@ -69,6 +69,7 @@ set cursorline
 set foldmethod=indent
 set foldlevel=99
 set lazyredraw
+set shortmess+=I
 syntax on
 
 " encodings
