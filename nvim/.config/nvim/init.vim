@@ -53,7 +53,10 @@ Plug 'MathSquared/vim-python-sql'
 Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
-colorscheme jellybeans
+try
+    colorscheme jellybeans
+catch
+endtry
 
 "               __  __  _                 
 "    ________  / /_/ /_(_)___  ____ ______
@@ -234,15 +237,6 @@ augroup vimrc-remember-cursor-position
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
-"" make/cmake
-augroup vimrc-make-cmake
-  autocmd!
-  autocmd FileType make setlocal noexpandtab
-  autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
-augroup END
-
-set autoread
-
 " html
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
@@ -258,16 +252,6 @@ augroup vimrc-python
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 colorcolumn=79
       \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-augroup END
-
-" c/c++ because why not
-autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
-autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
-
-" markdown
-augroup vimrc-markdown
-  autocmd!
-  autocmd FileType markdown setlocal noexpandtab shiftwidth=4 tabstop=4 colorcolumn=79 nonumber
 augroup END
 
 " sql - we use postgresql, accept no substitutes
