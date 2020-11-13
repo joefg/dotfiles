@@ -50,13 +50,13 @@ Plug 'MathSquared/vim-python-sql'
 " / /__/ /_/ / / /_/ / /_/ / /  (__  ) 
 " \___/\____/_/\____/\__,_/_/  /____/  
 "                                      
-Plug 'nanotech/jellybeans.vim'
+"Plug 'nanotech/jellybeans.vim'
+Plug 'morhetz/gruvbox'
+
 call plug#end()
 
-try
-    colorscheme jellybeans
-catch
-endtry
+"colorscheme jellybeans
+colorscheme gruvbox
 
 "               __  __  _                 
 "    ________  / /_/ /_(_)___  ____ ______
@@ -137,11 +137,6 @@ function! StatuslineGit()
   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
 
-" status bar colors
-au InsertEnter * hi statusline guifg=black guibg=#d7afff ctermfg=black ctermbg=magenta
-au InsertLeave * hi statusline guifg=black guibg=#8fbfdc ctermfg=black ctermbg=cyan
-hi statusline guifg=black guibg=#8fbfdc ctermfg=black ctermbg=cyan
-
 function! ModeCurrent() abort
   let l:modecurrent = mode()
   " use get() -> fails safely, since ^V doesn't seem to register
@@ -180,23 +175,17 @@ set noshowmode
 set statusline=
 set statusline+=%0*\%{StatuslineGit()}\                  " git status
 set statusline+=%1*\ %<%F%m%r%h%w\                       " filepath, modified, ro, helpfile, preview
-set statusline+=%3*│                                     " separator
+set statusline+=%3*│\                                    " separator
 set statusline+=%2*\%Y\                                  " filetype
-set statusline+=%3*│                                     " separator
-set statusline+=%2*\%{''.(&fenc!=''?&fenc:&enc).''}      " encoding
-set statusline+=\ (%{&ff})                               " fileformat (dos/unix..)
-set statusline+=%=                                       " right Side
-set statusline+=%3*│                                     " separator
+set statusline+=%3*│\                                    " separator
+set statusline+=%2*\%{''.(&fenc!=''?&fenc:&enc).''}\     " encoding
+set statusline+=\(%{&ff})\                              " fileformat (dos/unix..)
+set statusline+=%=\                                      " right Side
 set statusline+=%1*\ %l/%L\                              " line number / total lines
 set statusline+=%0*\ %{ModeCurrent()}\                   " current mode
 
 " netrw
 let g:netrw_liststyle = 3
-
-hi User1 ctermfg=007 ctermbg=239 guibg=#4e4e4e guifg=#adadad
-hi User2 ctermfg=007 ctermbg=236 guibg=#303030 guifg=#adadad
-hi User3 ctermfg=236 ctermbg=236 guibg=#303030 guifg=#303030
-hi User4 ctermfg=239 ctermbg=239 guibg=#4e4e4e guifg=#4e4e4e
 
 " rainbow_parentheses.vim settings
 let g:rbpt_colorpairs = [
