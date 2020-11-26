@@ -50,13 +50,10 @@ Plug 'MathSquared/vim-python-sql'
 " / /__/ /_/ / / /_/ / /_/ / /  (__  ) 
 " \___/\____/_/\____/\__,_/_/  /____/  
 "                                      
-"Plug 'nanotech/jellybeans.vim'
-Plug 'morhetz/gruvbox'
-
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
-"colorscheme jellybeans
-colorscheme gruvbox
+colorscheme jellybeans
 
 "               __  __  _                 
 "    ________  / /_/ /_(_)___  ____ ______
