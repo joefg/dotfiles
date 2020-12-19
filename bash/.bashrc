@@ -107,33 +107,41 @@ function parse_git_dirty {
 	fi
 }
 
-RCol='\[\e[m\]'    # reset colour
-Red='\[\e[0;31m\]' # red
-Gre='\[\e[0;32m\]' # green
-Yel='\[\e[0;33m\]' # yellow
+if command -v fish &> /dev/null
+then
+    # I like to use fish on personal machines, but don't want it installed on other machines.
+    # Instead of using chsh to set the shell, I'm able to keep some bash specific stuff here.
+    exec fish
+else
+    # Set up PS1 prompt for bash
+    RCol='\[\e[m\]'    # reset colour
+    Red='\[\e[0;31m\]' # red
+    Gre='\[\e[0;32m\]' # green
+    Yel='\[\e[0;33m\]' # yellow
 
-PS1=""
-PS1+="${RCol}"
-PS1+="${Gre}\u@\h${RCol}:${Yel}\w ${RCol}\`parse_git_branch\`\\$ "
+    PS1=""
+    PS1+="${RCol}"
+    PS1+="${Gre}\u@\h${RCol}:${Yel}\w ${RCol}\`parse_git_branch\`\\$ "
 
-# Aliases - it's wiser to put these in a separate file.
-# One for public stuff that you don't mind putting into GitHub,
-# one for private stuff and the like.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+    # Aliases - it's wiser to put these in a separate file.
+    # One for public stuff that you don't mind putting into GitHub,
+    # one for private stuff and the like.
+    if [ -f ~/.bash_aliases ]; then
+        . ~/.bash_aliases
+    fi
 
-if [ -f ~/.bash_aliases_private ]; then
-    . ~/.bash_aliases_private
-fi
+    if [ -f ~/.bash_aliases_private ]; then
+        . ~/.bash_aliases_private
+    fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+    # enable programmable completion features (you don't need to enable
+    # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+    # sources /etc/bash.bashrc).
+    if ! shopt -oq posix; then
+      if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+      elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+      fi
+    fi
 fi

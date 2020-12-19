@@ -6,6 +6,14 @@ dotfiles
 ├── bash
 │   ├── .bash_aliases
 │   └── .bashrc
+├── fish
+│   └── .config
+│       └── fish
+│           ├── config.fish
+│           ├── aliases.fish
+│           └── functions
+│              ├── mkcd.fish
+│              └── fish_prompt.fish
 │── git
 │   └── .gitconfig
 ├── nvim
@@ -36,11 +44,6 @@ To install each config, run `stow $CONFIG` from this repository.
 
 If you wish to make any changes, I recommend doing them on a feature branch, making sure to merge `master` into this feature branch as often as you can. There are some things that you have to change to get things working on other platforms, like hardware monitoring for `i3status`.
 
-## Theming
-I'm alternating between two themes:
-- [gruvbox](https://github.com/morhetz/gruvbox), for terminals that run natively;
-- [jellybeans](https://github.com/nanotech/jellybeans.vim), for terminals over ssh.
-
 ### tmux
 I'm using a source-file directive to import a .conf file, with a rough "theme" loaded from there.
 ```
@@ -56,6 +59,7 @@ In the interests of avoiding the embarrassment of accidentally committing some p
 | Config | Private                 |
 | ------ | ----------------------- |
 | bash   | `.bash_aliases_private` |
+| fish   | `.private_aliases.fish` |
 | git    | `.gitconfig.private`    |
 
 ### Bash
@@ -65,6 +69,15 @@ This is imported via `.bashrc`, the same way that `~/.bash_aliases` is imported.
 if [ -f ~/.bash_aliases_private ]; then
     . ~/.bash_aliases_private
 fi
+```
+
+### Fish
+This is imported via `config.fish`, the same way that `aliases.fish` is imported.
+
+```
+if test -e ~/.private_aliases.fish
+    . ~/.private_aliases.fish
+end
 ```
 
 ### Git
