@@ -24,6 +24,9 @@ Plug 'junegunn/vim-easy-align'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'kien/rainbow_parentheses.vim'
 
+" statusline
+Plug 'itchyny/lightline.vim'
+
 " versioning - git, the only version control that matters ;)
 Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
@@ -124,7 +127,19 @@ inoremap {<CR> {<CR>}<Esc>ko<tab>
 inoremap [<CR> [<CR>]<Esc>ko<tab>
 inoremap (<CR> (<CR>)<Esc>ko<tab>
 
-" statusline
+" lightline settings
+let g:lightline = {
+  \ 'colorscheme': 'jellybeans',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'readonly', 'gitbranch', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function' : {
+  \     'gitbranch': 'GitBranch'
+  \ },
+  \}
+
+" git helper functions
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
@@ -133,62 +148,6 @@ function! StatuslineGit()
   let l:branchname = GitBranch()
   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
-
-function! ModeCurrent() abort
-  let l:modecurrent = mode()
-  " use get() -> fails safely, since ^V doesn't seem to register
-  " 3rd arg is used when return of mode() == 0, which is case with ^V
-  " thus, ^V fails -> returns 0 -> replaced with 'V Block'
-  let l:modelist = toupper(get(g:currentmode, l:modecurrent, 'V·Block '))
-  let l:current_status_mode = l:modelist
-  return l:current_status_mode
-endfunction
-
-" Status Line Custom
-let g:currentmode={
-    \ 'n'  : 'Normal',
-    \ 'no' : 'Normal·Operator Pending',
-    \ 'v'  : 'Visual',
-    \ 'V'  : 'V·Line',
-    \ '^V' : 'V·Block',
-    \ 's'  : 'Select',
-    \ 'S'  : 'S·Line',
-    \ '^S' : 'S·Block',
-    \ 'i'  : 'Insert',
-    \ 'R'  : 'Replace',
-    \ 'Rv' : 'V·Replace',
-    \ 'c'  : 'Command',
-    \ 'cv' : 'Vim Ex',
-    \ 'ce' : 'Ex',
-    \ 'r'  : 'Prompt',
-    \ 'rm' : 'More',
-    \ 'r?' : 'Confirm',
-    \ '!'  : 'Shell',
-    \ 't'  : 'Terminal'
-    \}
-
-set laststatus=2
-set noshowmode
-set statusline=
-set statusline+=%0*\%{StatuslineGit()}\                  " git status
-set statusline+=%1*\ %<%F%m%r%h%w\                       " filepath, modified, ro, helpfile, preview
-set statusline+=%3*│\                                    " separator
-set statusline+=%2*\%Y\                                  " filetype
-set statusline+=%3*│\                                    " separator
-set statusline+=%2*\%{''.(&fenc!=''?&fenc:&enc).''}\     " encoding
-set statusline+=\(%{&ff})\                              " fileformat (dos/unix..)
-set statusline+=%=\                                      " right Side
-set statusline+=%1*\ %l/%L\                              " line number / total lines
-set statusline+=%0*\ %{ModeCurrent()}\                   " current mode
-
-au InsertEnter * hi statusline guifg=black guibg=#d7afff ctermfg=black ctermbg=magenta
-au InsertLeave * hi statusline guifg=black guibg=#8fbfdc ctermfg=black ctermbg=cyan
-hi statusline guifg=black guibg=#8fbfdc ctermfg=black ctermbg=cyan
-
-hi User1 ctermfg=007 ctermbg=239 guibg=#4e4e4e guifg=#adadad
-hi User2 ctermfg=007 ctermbg=236 guibg=#303030 guifg=#adadad
-hi User3 ctermfg=236 ctermbg=236 guibg=#303030 guifg=#303030
-hi User4 ctermfg=239 ctermbg=239 guibg=#4e4e4e guifg=#4e4e4e
 
 " netrw
 let g:netrw_liststyle = 3
