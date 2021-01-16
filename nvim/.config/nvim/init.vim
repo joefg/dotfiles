@@ -138,6 +138,7 @@ let g:lightline = {
   \     'gitbranch': 'GitBranch'
   \ },
   \}
+set noshowmode
 
 " git helper functions
 function! GitBranch()
