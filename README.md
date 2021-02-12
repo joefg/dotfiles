@@ -22,13 +22,6 @@ dotfiles
 │           └── init.vim
 ├── vim
 │   └── .vimrc
-├── i3
-│   └── .config
-│       └── i3
-│           └── config
-├── i3status
-│   └── .config
-│       └── i3status
 │           └── config
 ├── newsboat
 │   └── .newsboat
