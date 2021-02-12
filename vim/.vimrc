@@ -14,7 +14,9 @@ set textwidth=100    " Line wrap (number of cols)
 set showmatch        " Highlight matching brace
 set errorbells       " Beep or flash screen on errors
 set visualbell       " Use visual bell (no beeping)
-colorscheme peachpuff
+
+colorscheme desert   " Nice default colour scheme
+highlight Comment ctermfg=green
 
 set hlsearch         " Highlight all search results
 set smartcase        " Enable smart-case search
