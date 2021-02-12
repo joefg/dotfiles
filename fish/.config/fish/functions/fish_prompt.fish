@@ -71,7 +71,7 @@ function fish_prompt
     echo -n ']'
 
     # Date
-    _nim_prompt_wrapper $retc '' (date +%X)
+    #_nim_prompt_wrapper $retc '' (date +%X)
 
     # Virtual Environment
     set -q VIRTUAL_ENV_DISABLE_PROMPT
@@ -85,13 +85,13 @@ function fish_prompt
     and _nim_prompt_wrapper $retc G $prompt_git
 
     # Battery status
-    type -q acpi
-    and test (acpi -a 2> /dev/null | string match -r off)
-    and _nim_prompt_wrapper $retc B (acpi -b | cut -d' ' -f 4-)
+    #type -q acpi
+    #and test (acpi -a 2> /dev/null | string match -r off)
+    #and _nim_prompt_wrapper $retc B (acpi -b | cut -d' ' -f 4-)
 
     # New line
     echo
-
+    
     # Background jobs
     set_color normal
     for job in (jobs)
