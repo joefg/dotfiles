@@ -41,9 +41,6 @@ Plug 'jreybert/vimagit'
 " polyglot (all the useful languages, loaded)
 Plug 'sheerun/vim-polyglot'
 
-" html
-Plug 'gorodinskiy/vim-coloresque'
-
 " python+sql
 Plug 'MathSquared/vim-python-sql'
 
@@ -92,12 +89,6 @@ set softtabstop=0
 set shiftwidth=4
 set expandtab
 
-" map leader to ,
-let mapleader=','
-
-" enable hidden buffers
-set hidden
-
 " searching
 set hlsearch
 set incsearch
@@ -109,18 +100,6 @@ set nobackup
 set noswapfile
 
 set fileformats=unix
-
-" because, let's face it, vim can be really pedantic
-cnoreabbrev W! w!
-cnoreabbrev Q! q!
-cnoreabbrev Qall! qall!
-cnoreabbrev Wq wq
-cnoreabbrev Wa wa
-cnoreabbrev wQ wq
-cnoreabbrev WQ wq
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Qall qall
 
 " closing braces
 inoremap {<CR> {<CR>}<Esc>ko<tab>
@@ -185,23 +164,6 @@ augroup END
 augroup vimrc-remember-cursor-position
   autocmd!
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-augroup END
-
-" html
-autocmd Filetype html setlocal ts=2 sw=2 expandtab
-
-" javascript
-augroup vimrc-javascript
-  autocmd!
-  autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4
-augroup END
-
-" python
-augroup vimrc-python
-  autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 colorcolumn=79
-      \ formatoptions+=croq softtabstop=4
-      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
 " sql - we use postgresql, accept no substitutes
