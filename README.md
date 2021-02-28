@@ -37,12 +37,6 @@ To install each config, run `stow $CONFIG` from this repository.
 
 If you wish to make any changes, I recommend doing them on a feature branch, making sure to merge `master` into this feature branch as often as you can. There are some things that you have to change to get things working on other platforms, like hardware monitoring for `i3status`.
 
-### tmux
-I'm using a source-file directive to import a .conf file, with a rough "theme" loaded from there.
-```
-source-file ~/dotfiles/tmux/gruvbox.conf # gruvbox
-```
-
 ### nvim
 For this, we're using `vim-plug` to fetch two sets of themes: gruvbox and jellybeans, and then using `colorscheme` to set the scheme.
 
